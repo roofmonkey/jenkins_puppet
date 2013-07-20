@@ -2,10 +2,13 @@
 
 node default {
    include jenkins	
+   include wget
    jenkins::plugin {'swarm':}
    jenkins::plugin {'git':}
-   
+      
    include firewall
+
+   include maven
 }
 
 resources { "firewall":

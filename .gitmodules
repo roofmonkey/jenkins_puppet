@@ -4,3 +4,12 @@
 [submodule "modules/firewall"]
 	path = modules/firewall
 	url = https://github.com/puppetlabs/puppetlabs-firewall.git
+[submodule "modules/puppet"]
+	path = modules/puppet
+	url = https://github.com/maestrodev/puppet-maven.git
+[submodule "modules/maven"]
+	path = modules/maven
+	url = https://github.com/maestrodev/puppet-maven.git
+[submodule "modules/wget"]
+	path = modules/wget
+	url = https://github.com/maestrodev/puppet-wget.git

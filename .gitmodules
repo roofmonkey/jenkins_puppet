@@ -13,3 +13,6 @@
 [submodule "modules/wget"]
 	path = modules/wget
 	url = https://github.com/maestrodev/puppet-wget.git
+[submodule "modules/open-jdk"]
+	path = modules/open-jdk
+	url = https://github.com/myrontuttle/puppet-openjdk.git

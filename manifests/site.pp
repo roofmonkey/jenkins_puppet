@@ -3,6 +3,8 @@
 node default {
    include jenkins	
    include wget
+   include openjdk
+
    jenkins::plugin {'swarm':}
    jenkins::plugin {'git':}
       

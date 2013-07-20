@@ -1,0 +1,54 @@
+commit 19b88e4c3c4d77cb74a29a581c41d044313d2b94
+Author: jay vyas <jayunit100@gmail.com>
+Date:   Sat Jul 20 13:04:29 2013 -0400
+
+    update jenks submodule
+
+diff --git a/manifests/repo.pp b/manifests/repo.pp
+index b9a74d4..9dc854a 100644
+--- a/manifests/repo.pp
++++ b/manifests/repo.pp
+@@ -3,8 +3,8 @@
+ #
+ class jenkins::repo ($lts=0, $repo=1) {
+   # JJM These anchors work around #8040
+-  anchor { 'jenkins::repo::alpha': }
+-  anchor { 'jenkins::repo::omega': }
++  #anchor { 'jenkins::repo::alpha': }
++  #anchor { 'jenkins::repo::omega': }
+ 
+   if ($repo == 1) {
+     case $::osfamily {
+@@ -13,8 +13,8 @@ class jenkins::repo ($lts=0, $repo=1) {
+         class {
+           'jenkins::repo::el':
+             lts     => $lts,
+-            require => Anchor['jenkins::repo::alpha'],
+-            before  => Anchor['jenkins::repo::omega'],
++            #require => Anchor['jenkins::repo::alpha'],
++            #before  => Anchor['jenkins::repo::omega'],
+         }
+       }
+ 
+@@ -22,8 +22,8 @@ class jenkins::repo ($lts=0, $repo=1) {
+         class {
+           'jenkins::repo::el':
+             lts     => $lts,
+-            require => Anchor['jenkins::repo::alpha'],
+-            before  => Anchor['jenkins::repo::omega'],
++            #require => Anchor['jenkins::repo::alpha'],
++            #before  => Anchor['jenkins::repo::omega'],
+         }
+       }
+ 
+@@ -31,8 +31,8 @@ class jenkins::repo ($lts=0, $repo=1) {
+         class {
+           'jenkins::repo::debian':
+             lts     => $lts,
+-            require => Anchor['jenkins::repo::alpha'],
+-            before  => Anchor['jenkins::repo::omega'],
++            #require => Anchor['jenkins::repo::alpha'],
++            #before  => Anchor['jenkins::repo::omega'],
+         }
+       }
+ 

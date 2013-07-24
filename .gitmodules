@@ -16,3 +16,6 @@
 [submodule "modules/open-jdk"]
 	path = modules/open-jdk
 	url = https://github.com/myrontuttle/puppet-openjdk.git
+[submodule "modules/archiva"]
+	path = modules/archiva
+	url = https://github.com/maestrodev/puppet-archiva.git

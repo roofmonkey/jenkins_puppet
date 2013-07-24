@@ -22,6 +22,9 @@ cp $JARFILE hadoop-glusterfs-$TAGNAME-x.jar
 echo "DEPLOY -> $JARFILE -- ?"
 ls -l *jar
 read x
+jar -tf $JARFILE 
+
+echo "If above jar looks good, hit enter to proceed" 
 
 mvn deploy:deploy-file -Dfile=hadoop-glusterfs-$TAGNAME-x.jar  -DrepositoryId=internal -Durl=file:/root/archivainstall/apache-archiva-1.3.6/data/repositories/internal/ -DgroupId=org.apache.hadoop.fs.glusterfs -DartifactId=glusterfs-hadoop -Dversion=$TAGNAME
 

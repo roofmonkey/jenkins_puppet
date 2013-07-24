@@ -1,0 +1,24 @@
+This is a puppet module for jenkins setup for our glusterfs - hadoop build server, it automates installation of puppet and disabling firewalls. 
+
+It can also be used to setup VMs, etc, for development and testing of gluster.
+
+In order to use it:
+
+mkdir /etc/puppet
+cd /etc/puppet/
+
+yum install git
+git clone this repository
+
+yum install puppet
+
+Note that there might be some lines of puppet script you have to coment out of the jenkins module for alpha/omega stuff.  
+
+Then daemonize the puppet service or apply it manually: 
+
+/usr/bin/puppet apply $(puppet config print manifest)
+
+ARCHIVA: NOT YET PUPPETIZED
+
+To install archiva, simply copy the repository information into a fresh archiva aquired by wget. 
+Then, you will want to update the port it serves on , and run bin/archiva start.

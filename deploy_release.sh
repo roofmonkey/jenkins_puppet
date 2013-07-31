@@ -1,11 +1,18 @@
 ### get the tag list, and select one ### 
 
-cd hadoop-glusterfs/
+cd /root/archivainstall/hadoop-glusterfs/
 git pull
 git tag -l
-echo "ENTER tagname.."
-read TAGNAME 
+
+TAGNAME=$1
+if [ -z "$1" ]
+   then 
+      echo "ENTER tagname.."
+      read TAGNAME 
+fi
+
 cd ..
+
 
 ### BUILD THE RELEASE based on tag ###
 
@@ -21,14 +28,17 @@ cp $JARFILE hadoop-glusterfs-$TAGNAME-x.jar
 
 echo "DEPLOY -> $JARFILE -- ?"
 ls -l *jar
-read x
+#read x
 jar -tf $JARFILE 
 
 echo "If above jar looks good, hit enter to proceed" 
 
 mvn deploy:deploy-file -Dfile=hadoop-glusterfs-$TAGNAME-x.jar  -DrepositoryId=internal -Durl=file:/root/archivainstall/apache-archiva-1.3.6/data/repositories/internal/ -DgroupId=org.apache.hadoop.fs.glusterfs -DartifactId=glusterfs-hadoop -Dversion=$TAGNAME
 
-echo "REMOVE OLD JARS??"
-read x
+echo "REMOVing OLD JARS"
+#read x
 rm -rf *jar
 
+echo "DONE!"
+
+tree /root/archivainstall/apache-archiva-1.3.6/data/repositories/internal/

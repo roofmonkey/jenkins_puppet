@@ -11,6 +11,9 @@ if [ -z "$1" ]
       read TAGNAME 
 fi
 
+#CHECKOUT THE TAG !
+git checkout $TAGNAME
+
 cd ..
 
 

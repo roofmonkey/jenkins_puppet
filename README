@@ -18,7 +18,10 @@ Then daemonize the puppet service or apply it manually:
 
 /usr/bin/puppet apply $(puppet config print manifest)
 
-ARCHIVA: NOT YET PUPPETIZED
-
-To install archiva, simply copy the repository information into a fresh archiva aquired by wget. 
+*** ARCHIVA: NOT YET PUPPETIZED
+wget archiva the standard way, and just run bin/start..
 Then, you will want to update the port it serves on , and run bin/archiva start.
+
+*** SYNCING TO GITORIOUS
+cd /root/archivainstall/hadoop-glusterfs/ && git pull origin master && git push forge --mirror
+
